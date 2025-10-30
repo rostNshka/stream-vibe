@@ -5,16 +5,16 @@
   width: 100%;
   padding-block: fluid(22, 14);
   border-bottom: var(--border-width-s) solid transparent;
-  animation: scrolling-header;
+  animation-name: scrolling-header;
   animation-fill-mode: both;
-  animation-timeline: scroll() ;
-  animatn-range: 0 100px;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
 
   @keyframes scrolling-header {
-    to{
+    to {
       padding-block: 10px;
       background-color: var(--color-black-08);
-      border-color: var(--color-black-15) ;
+      border-color: var(--color-black-15);
     }
   }
 
@@ -23,5 +23,61 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 16px;
+  }
+
+  &__menu {
+    border-radius: var(--border-radius-l);
+
+    @include laptop {
+      border-radius: var(--border-radius-m);
+    }
+
+    @include tablet-above {
+      padding: fluid-to-laptop(10, 8);
+      background-color: var(--color-black-06);
+      outline: var(--border-width-l) solid var(--color-black-12);
+    }
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      border-radius: 0;
+      overflow-y: auto;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+
+      @include tablet {
+        flex-direction: column;
+        row-gap: 16px;
+        margin-block: auto;
+      }
+    }
+
+    &-link {
+      padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+      color: var(--color-gray-75);
+      border-radius: var(--border-radius-s);
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include hover {
+        color: var(--color-white);
+        background-color: var(--color-red-60);
+      }
+
+      &.is-active {
+        font-weight: 500;
+        color: var(--color-white);
+        background-color: var(--color-black-10);
+        pointer-events: none;
+      }
+    }
   }
 }
