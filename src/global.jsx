@@ -1,14 +1,14 @@
 import '@/styles'
-import { Head } from "minista"
-import Header from "@/layouts/Header";
-import Content from "@/layouts/Content";
-import Footer from "@/layouts/Footer";
+import { Head } from 'minista'
+import Header from '@/layouts/Header'
+import Content from '@/layouts/Content'
+import Footer from '@/layouts/Footer'
 
 export default function ( props ) {
     const {
         children,
         title,
-    } = props;
+    } = props
 
     return (
         <>
