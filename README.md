@@ -3,7 +3,7 @@
 
 ⚙️Технологии:
 HTML5,
-CSS3(SASS, PostCSS),
+CSS3(SASS, PostCSS,classNames, swiper.js),
 JavaScript,
 Vite,
 Minista,
