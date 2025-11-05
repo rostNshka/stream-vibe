@@ -7,6 +7,9 @@ const SliderNavigation = (props) => {
         className,
         id,
         hasPagination = true,
+        /**
+         * '' (default) | 'tile'
+         */
         mode = '',
     } = props
 

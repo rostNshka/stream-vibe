@@ -8,7 +8,7 @@ const Sections = (props) => {
         titleId,
         description,
         actions,
-        isActionHiddenOnMobile = false,
+        isActionsHiddenOnMobile = false,
         children,
     } = props
 
@@ -31,7 +31,7 @@ const Sections = (props) => {
                 {actions && (
                     <div
                         className={classNames('section__actions', {
-                            'hidden-mobile': isActionHiddenOnMobile,
+                            'hidden-mobile': isActionsHiddenOnMobile,
                         })}
                     >
                         {actions}
