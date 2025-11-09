@@ -3,7 +3,7 @@ import getIdFromTitle from "@/utils/getIdFromTitle.js";
 import classNames from "classnames";
 import getTabsElementsFromTitle from "@/components/Tabs/utils/getTabsElementsFromTitle.js";
 
-const TabsNavigations = (props) => {
+const TabsNavigation = (props) => {
   const {
     className,
     id,
@@ -49,4 +49,4 @@ const TabsNavigations = (props) => {
   )
 }
 
-export default TabsNavigations
+export default TabsNavigation

@@ -1,6 +1,5 @@
 import './Tabs.scss'
 import classNames from "classnames";
-import getParams from "@/utils/getParams.js";
 import getTabsElementsFromTitle from "@/components/Tabs/utils/getTabsElementsFromTitle.js";
 import TabsNavigations from "./components/TabsNavigations/index.js";
 
@@ -37,7 +36,7 @@ const Tabs = (props) => {
               'is-active': isActive,
             })}
             id={contentId}
-                 aria-labelledby={buttonId}
+            aria-labelledby={buttonId}
             tabIndex={0}
             data-js-tabs-content=""
             key={index}
