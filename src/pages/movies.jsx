@@ -1,3 +1,5 @@
+import MoviesBanner from "@/sections/MoviesBanner/index.js";
+
 export const metadata = {
     title: 'Movies & Shows'
 }
@@ -6,7 +8,7 @@ export const metadata = {
 export default function () {
     return (
         <>
-            <h1>Фильмы</h1>
+          <MoviesBanner />
         </>
     )
 }
