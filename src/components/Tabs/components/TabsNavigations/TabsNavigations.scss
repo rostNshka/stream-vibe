@@ -32,11 +32,14 @@
 
   &__button {
     position: relative;
+    display: inline-flex;
+    justify-content: center;
     padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
     border-radius: var(--border-radius-m);
     transition-duration: var(--transition-duration);
     cursor: pointer;
     user-select: none;
+    flex-grow: 1;
 
     @include laptop {
       border-radius: var(--border-radius-xs);
