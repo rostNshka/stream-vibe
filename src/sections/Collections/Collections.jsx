@@ -1,11 +1,12 @@
 import './Collections.scss'
-import Tabs from "@/components/Tabs";
-import collectionsGroups from "./collectionsGroups";
-import getIdFromTitle from "@/utils/getIdFromTitle.js";
-import Sections from "@/layouts/Sections/index.js";
-import SliderNavigation from "@/components/Slider/components/SliderNavigation";
-import Slider from "@/components/Slider";
-import CategoryCard from "@/components/CategoryCard";
+import Tabs from '@/components/Tabs'
+import collectionsGroups from './collectionsGroups'
+import getIdFromTitle from '@/utils/getIdFromTitle'
+import Section from '@/layouts/Sections'
+import SliderNavigation from '@/components/Slider/components/SliderNavigation'
+import Slider from '@/components/Slider'
+import CategoryCard from '@/components/CategoryCard'
+import MovieCard from "@/components/MovieCard";
 
 const Collections = () => {
   return (
@@ -25,6 +26,7 @@ const Collections = () => {
               const {
                 title,
                 categoryItems,
+                movieItems,
                 sliderParams,
               } = collectionItem
 
@@ -33,8 +35,7 @@ const Collections = () => {
               const sliderNavigationId = `${titleFormatted}-slider-navigation`
 
               return (
-
-                <Sections
+                <Section
                   className="collections__section"
                   title={title}
                   titleId={titleId}
@@ -54,9 +55,11 @@ const Collections = () => {
                   >
                     {categoryItems?.map((categoryItem, index) => (
                       <CategoryCard {...categoryItem} key={index} />
+                    )) ?? movieItems?.map((movieItem, index) => (
+                      <MovieCard {...movieItem} key={index} />
                     ))}
                   </Slider>
-                </Sections>
+                </Section>
               )
             })}
           </div>
