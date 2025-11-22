@@ -2,6 +2,8 @@ import './PlansComparison.scss'
 import Sections from "@/layouts/Sections/index.js";
 import Badge from "@/components/Badge/index.js";
 import Table from "@/components/Table/index.js";
+import Specifications from "@/components/Specifications/index.js";
+import Tabs from "@/components/Tabs/Tabs.jsx";
 
 const PlansComparison = () => {
   const headCells = [
@@ -12,14 +14,17 @@ const PlansComparison = () => {
     {
       children: 'Basic',
       width: '25%',
+      tabsTitle: 'basic',
     },
     {
       children: <>Standard <Badge mode='accent'>Popular</Badge></>,
       width: '25%',
+      tabsTitle: 'standard',
     },
     {
       children: 'Premium',
       width: '25%',
+      tabsTitle: 'premium',
     },
   ]
 
@@ -108,6 +113,22 @@ const PlansComparison = () => {
     },
   ]
 
+  const tabsItems = headCells
+    .filter((headCell) => headCell.tabsTitle)
+    .map((headCell, headCellIndex) => ({
+      title: headCell.tabsTitle,
+      isActive: headCellIndex === 0,
+      children: (
+        <Specifications
+          items={rows.map(({ cells, isWide}) => ({
+            key: cells[0],
+            value: cells[headCellIndex + 1],
+            isWide,
+          }))}
+        />
+      )
+    }))
+
   return (
     <Sections
       title="Compare our plans and find the right one for you"
@@ -115,8 +136,14 @@ const PlansComparison = () => {
       descriptions="StreamVibe offers three different plans to fit your needs: Basic, Standard, and Premium. Compare the features of each plan and choose the one that's right for you."
     >
       <Table
+        className="hidden-mobile"
         headCells={headCells}
         rows={rows}
+      />
+      <Tabs
+        className="visible-mobile"
+        title="plans-comparison-tabs-title"
+        items={tabsItems}
       />
     </Sections>
   )
